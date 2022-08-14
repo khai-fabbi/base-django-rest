@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+djangorestframework = "*"
+mysqlclient = "*"
+python-dotenv = "*"
+django-cors-headers = "*"
+djangorestframework-simplejwt = "*"
+djangorestframework-csv = "*"
+social-auth-app-django = "*"
+django-filter = "*"
+drf-yasg = {extras = ["validation"], version = "*"}
+drf-excel = "*"
+
+[dev-packages]
+faker = "*"
+factory-boy = "*"
+types-pytz = "*"
+coverage = {extras = ["toml"], version = "*"}
+mypy = "*"
+flake8 = "*"
+autopep8 = "*"
+pygount = "*"
+
+[requires]
+python_version = "3.9"
