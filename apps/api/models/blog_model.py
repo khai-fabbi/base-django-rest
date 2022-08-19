@@ -29,21 +29,16 @@ class BaseItem(models.Model):
 
 
 class Category(BaseItem):
-    slug = models.SlugField(unique=True)
-
     class Meta:
         ordering = ["name"]
         db_table = "tbl_category"
 
-    @classmethod
-    def save(self, *args, **kwargs):
-        if self.name is not None or self.name != "":
-            self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.name
 
 
 class Tag(BaseItem):
-    content = models.CharField(max_length=100, unique=True, null=False, blank=False)
+    content = models.CharField(max_length=100, unique=True, null=False, blank=True)
 
     class Meta:
         ordering = ["name"]
@@ -57,8 +52,8 @@ class Post(BaseItem):
     )
     is_hot = models.BooleanField(default=False)
     view = models.IntegerField(validators=[MinValueValidator(0)], default=0)
-    slug = models.SlugField(unique=True)
-    tag = models.ManyToManyField(Tag, blank=True, null=True, related_name="tags")
+    slug = models.SlugField(unique=True, blank=True, null=True)
+    tag = models.ManyToManyField(Tag, blank=True, related_name="tags")
     content = models.TextField(default="")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="author_post"
@@ -72,11 +67,9 @@ class Post(BaseItem):
         ordering = ["-published"]
         db_table = "tbl_post"
 
-    @classmethod
     def save(self, *args, **kwargs):
-        if self.title is not None or self.title != "":
-            self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
+        self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
 
 
 class ProductComment(BaseAction):

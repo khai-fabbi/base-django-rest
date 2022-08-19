@@ -10,18 +10,6 @@ from helpers.exceptions import InternalServerError, get_first_error_detail
 
 
 def custom_exception_handler(exc: Exception, context: Any) -> Optional[Response]:
-    """Handle all APIExceptions occured after receiving HTTP request.
-
-    Args:
-        exc (Exception): Exception.
-        context (Any): Exception context.
-
-    Returns:
-        Optional[Response]: HTTP error response.
-    """
-
-    # Call rest_framework's default exception handler first,
-    # to get the standard error response.
     response = exception_handler(exc, context)
 
     if response is not None:

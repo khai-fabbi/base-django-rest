@@ -24,7 +24,7 @@ class TodoList(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
     # permission_classes = [HasAllTodoPermissions | IsSuperAdmin]
-    permission_classes = [DjangoModelPermissions]
+    # permission_classes = [DjangoModelPermissions]
     filterset_fields = ['name', 'status']
     search_fields = ['name']
     # ordering_fields = ['id']  # '__all__'

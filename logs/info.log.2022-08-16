@@ -1,0 +1,237 @@
+2022-08-16 07:47:22 ERROR You're using the staticfiles app without having set the required STATIC_URL setting.
+Traceback (most recent call last):
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/staticfiles/storage.py", line 496, in _setup
+    self._wrapped = get_storage_class(settings.STATICFILES_STORAGE)()
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/staticfiles/storage.py", line 29, in __init__
+    check_settings(base_url)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/staticfiles/utils.py", line 49, in check_settings
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: You're using the staticfiles app without having set the required STATIC_URL setting.
+2022-08-16 08:36:07 ERROR save() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1225, in save_model
+    obj.save()
+  File "/home/quang/Desktop/Python/blog-django/apps/api/models/blog_model.py", line 42, in save
+    super().save(*args, **kwargs)
+TypeError: save() missing 1 required positional argument: 'self'
+2022-08-16 08:36:47 ERROR save() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1225, in save_model
+    obj.save()
+  File "/home/quang/Desktop/Python/blog-django/apps/api/models/blog_model.py", line 42, in save
+    super().save(*args, **kwargs)
+TypeError: save() missing 1 required positional argument: 'self'
+2022-08-16 08:41:03 ERROR save() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1225, in save_model
+    obj.save()
+  File "/home/quang/Desktop/Python/blog-django/apps/api/models/blog_model.py", line 71, in save
+    super().save(*args, **kwargs)
+TypeError: save() missing 1 required positional argument: 'self'
+2022-08-16 08:55:12 ERROR save() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1225, in save_model
+    obj.save()
+  File "/home/quang/Desktop/Python/blog-django/apps/api/models/blog_model.py", line 71, in save
+    super().save(*args, **kwargs)
+TypeError: save() missing 1 required positional argument: 'self'
+2022-08-16 09:03:47 ERROR save() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1225, in save_model
+    obj.save()
+  File "/home/quang/Desktop/Python/blog-django/apps/api/models/blog_model.py", line 73, in save
+    super(Post, self).save(*args, **kwargs)
+TypeError: save() missing 1 required positional argument: 'self'
+2022-08-16 09:04:50 ERROR save() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/quang/Desktop/Python/blog-django/venv/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1225, in save_model
+    obj.save()
+  File "/home/quang/Desktop/Python/blog-django/apps/api/models/blog_model.py", line 73, in save
+    return super(Post, self).save(*args, **kwargs)
+TypeError: save() missing 1 required positional argument: 'self'

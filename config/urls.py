@@ -23,37 +23,61 @@ from django.urls import include, path, re_path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path(f'{settings.API_ENTRY_POINT}', include('apps.authen.urls')),
-    path(f'{settings.API_ENTRY_POINT}', include('apps.api.urls')),
+    path("admin/", admin.site.urls),
+    path(f"{settings.API_ENTRY_POINT}", include("apps.authen.urls")),
+    path(f"{settings.API_ENTRY_POINT}", include("apps.api.urls")),
 ]
 
 if settings.DEBUG:
+
     def log(request):
-        log_file_path = os.path.join(settings.LOG_DIRECTORY_PATH, settings.LOG_LEVEL.lower() + '.log')
+        log_file_path = os.path.join(
+            settings.LOG_DIRECTORY_PATH, settings.LOG_LEVEL.lower() + ".log"
+        )
         response = HttpResponse()
 
-        with open(log_file_path, 'rb') as f:
+        with open(log_file_path, "rb") as f:
             lines = f.readlines()[-100:]
-            response.write('<pre style="font-family: sans-serif;">' + '\n'.join([line.decode("utf-8") for line in lines]) + '</pre>')
+            response.write(
+                '<pre style="font-family: sans-serif;">'
+                + "\n".join([line.decode("utf-8") for line in lines])
+                + "</pre>"
+            )
 
         return response
 
     schema_view = get_schema_view(
         info=openapi.Info(
             title="API",
-            default_version='v1',
+            default_version="v1",
             description="This is API description for server. Only use this in development.",
         ),
         public=True,
         permission_classes=(permissions.AllowAny,),
     )
 
-    urlpatterns = urlpatterns + [
-        re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-        re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-        re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-        path('log/', log, name='log'),
-    ]
+    urlpatterns = (
+        urlpatterns
+        + [
+            re_path(
+                r"^swagger(?P<format>\.json|\.yaml)$",
+                schema_view.without_ui(cache_timeout=0),
+                name="schema-json",
+            ),
+            re_path(
+                r"^swagger/$",
+                schema_view.with_ui("swagger", cache_timeout=0),
+                name="schema-swagger-ui",
+            ),
+            re_path(
+                r"^redoc/$",
+                schema_view.with_ui("redoc", cache_timeout=0),
+                name="schema-redoc",
+            ),
+            path("log/", log, name="log"),
+        ]
+        + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    )
