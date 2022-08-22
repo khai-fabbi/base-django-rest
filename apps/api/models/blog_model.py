@@ -44,6 +44,9 @@ class Tag(BaseItem):
         ordering = ["name"]
         db_table = "tbl_tag"
 
+    def __str__(self):
+        return self.name
+
 
 class Post(BaseItem):
     title = models.CharField(max_length=255, default="")
