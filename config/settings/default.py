@@ -98,10 +98,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": os.environ.get("DATABASE_NAME", "fabbi"),
         "USER": os.environ.get("DATABASE_USER", "fabbi"),
-        "PASSWORD": os.environ.get("DATABASE_PASSWORD", "123qweA@#"),
-        "HOST": os.environ.get("DATABASE_HOST"),
+        "PASSWORD": os.environ.get("DATABASE_PASSWORD", "root"),
+        "HOST": os.environ.get("DATABASE_HOST",'db'),
         "PORT": os.environ.get("DATABASE_PORT", "3306"),
-        "OPTIONS": {"charset": "utf8mb4"},
         "ATOMIC_REQUESTS": True,
     },
 }
@@ -209,7 +208,8 @@ REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "libs.rest_framework.exc_handler.custom_exception_handler",
     "ORDERING_PARAM": "order_by",
 }
-
+CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
+CORS_ALLOW_CREDENTIALS = True
 # Logging
 LOG_DIRECTORY_PATH = os.environ.get("LOG_DIRECTORY_PATH", BASE_DIR / "logs")
 

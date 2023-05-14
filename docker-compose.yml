@@ -9,7 +9,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: blog_data
-      MYSQL_USER: admin
+      MYSQL_USER: root
       MYSQL_PASSWORD: root
     ports:
       - 3306:3306
@@ -21,7 +21,7 @@ services:
     environment:
       DATABASE_HOST: db
       DATABASE_NAME: blog_data
-      DATABASE_USER: admin
+      DATABASE_USER: root
       DATABASE_PASSWORD: root
       DATABASE_PORT: 3306
     ports:
